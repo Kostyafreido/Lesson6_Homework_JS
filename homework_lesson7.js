@@ -97,6 +97,14 @@ series.forEach(function(element) {
 	console.log(`The ${element.year} film ${element.title}, ${element.description}. This movie sterred ${element.actors} end etc. It was rated by ${element.details.reviews.length} users, with a total rating of 9. Register to watch this ${element.details.genre}.`);
 });
 
-// const getSeriesByYear = (series, year) => {
-// 	return
-// }
+function getByYear(array, year) {
+	return array.filter(item => item.year >= year
+)}
+
+console.log(getByYear(series, 2006))
+
+function getByTitle(array, title) {
+	return array.filter(item => item.title >= title
+)}
+
+console.log(getByTitle(series, "Dexter"))
