@@ -1,1 +1,1 @@
-# Lesson6_Homework_JS
+check homework_lesson7.js
