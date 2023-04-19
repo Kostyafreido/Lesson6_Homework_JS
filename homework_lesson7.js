@@ -18,7 +18,7 @@ const series = [
 		],
 		},
 	},
-
+	
 	{
 		id: 2,
 		title: "The Killing",
@@ -82,29 +82,35 @@ const series = [
 	},
 ];
 
-// console.log(series);
-
 // for (let i = 0; i <= series.length - 1; i++) {
 // 	console.log(series[i]); 
-// 	console.log(`The ${series[i].year} film ${series[i].title}, ${series[i].description}. This movie starred ${series[i].actors} and etc. It was rated by ${series[i].details.reviews.length} users, with a total rating of 9. Register to watch this ${series[i].details.genre}.`)
+// 	console.log(`The ${series[i].year} film ${series[i].title}, ${series[i].description}. This movie starred ${series[i]} and etc. It was rated by ${series[i].details.reviews.length} users, with a total rating of 9. Register to watch this ${series[i].details.genre}.`)
 // }
 
 // series.forEach((element) => {
-// 	console.log(`The ${element.year} film ${element.title}, ${element.description}. This movie sterred ${element.actors} end etc. It was rated by ${element.details.reviews.length} users, with a total rating of 9. Register to watch this ${element.details.genre}.`);
+// 	console.log(`The ${element.year} film ${element.title}, ${element.description}. This movie sterred ${element.actors.join(", ")} end etc. It was rated by ${element.details.reviews.length} users, with a total rating of 9. Register to watch this ${element.details.genre}.`);
 // })
 
-series.forEach(function(element) {
-	console.log(`The ${element.year} film ${element.title}, ${element.description}. This movie sterred ${element.actors} end etc. It was rated by ${element.details.reviews.length} users, with a total rating of 9. Register to watch this ${element.details.genre}.`);
-});
+const showSerias = series.forEach((series) => {
+	const avgScore = 
+		series.details.reviews.reduce((index, item) => index + item.score, 0) /
+		series.details.reviews.length;
+
+	console.log(
+		`The ${series.year} film “${series.title}”, which tells the story of “${series.description}”.
+		This movie sterred ${series.actors.join(', ')} end etc. It was rated by ${series.details.reviews.length} users, with a total rating of ${avgScore.toFixed(1)}. Register to watch this ${series.details.genre}.`);
+})
 
 function getByYear(array, year) {
 	return array.filter(item => item.year >= year
-)}
-
+)};
 console.log(getByYear(series, 2006))
 
-function getByTitle(array, title) {
-	return array.filter(item => item.title >= title
-)}
+function getMoviesByName(arr, item) {
+  let nameToLowerCase = item.toLowerCase()
+  console.log(nameToLowerCase)
+	const getMoviesByNames = arr.filter(element => element.title.toLowerCase().includes(nameToLowerCase))
+	console.log(getMoviesByNames)
+}
 
-console.log(getByTitle(series, "Dexter"))
+getMoviesByName(series, "killing")
