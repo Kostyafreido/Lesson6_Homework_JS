@@ -1,1 +1,1 @@
-check homework_lesson7.js
+homework_lesson7.js corrected
