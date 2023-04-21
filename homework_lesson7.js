@@ -91,26 +91,26 @@ const series = [
 // 	console.log(`The ${element.year} film ${element.title}, ${element.description}. This movie sterred ${element.actors.join(", ")} end etc. It was rated by ${element.details.reviews.length} users, with a total rating of 9. Register to watch this ${element.details.genre}.`);
 // })
 
-const showSerias = series.forEach((series) => {
-	const avgScore = 
-		series.details.reviews.reduce((index, item) => index + item.score, 0) /
-		series.details.reviews.length;
+// const showSerias = series.forEach((series) => {
+// 	const avgScore = 
+// 		series.details.reviews.reduce((index, item) => index + item.score, 0) /
+// 		series.details.reviews.length;
 
-	console.log(
-		`The ${series.year} film “${series.title}”, which tells the story of “${series.description}”.
-		This movie sterred ${series.actors.join(', ')} end etc. It was rated by ${series.details.reviews.length} users, with a total rating of ${avgScore.toFixed(1)}. Register to watch this ${series.details.genre}.`);
-})
+// 	console.log(
+// 		`The ${series.year} film “${series.title}”, which tells the story of “${series.description}”.
+// 		This movie sterred ${series.actors.join(', ')} end etc. It was rated by ${series.details.reviews.length} users, with a total rating of ${avgScore.toFixed(1)}. Register to watch this ${series.details.genre}.`);
+// })
 
-function getByYear(array, year) {
-	return array.filter(item => item.year >= year
-)};
-console.log(getByYear(series, 2006))
+// function getByYear(array, year) {
+// 	return array.filter(item => item.year >= year
+// )};
+// console.log(getByYear(series, 2006))
 
-function getMoviesByName(arr, item) {
-  let nameToLowerCase = item.toLowerCase()
-  console.log(nameToLowerCase)
-	const getMoviesByNames = arr.filter(element => element.title.toLowerCase().includes(nameToLowerCase))
-	console.log(getMoviesByNames)
-}
+// function getMoviesByName(arr, item) {
+//   let nameToLowerCase = item.toLowerCase()
+//   console.log(nameToLowerCase)
+// 	const getMoviesByNames = arr.filter(element => element.title.toLowerCase().includes(nameToLowerCase))
+// 	console.log(getMoviesByNames)
+// }
 
-getMoviesByName(series, "killing")
+// getMoviesByName(series, "killing")
